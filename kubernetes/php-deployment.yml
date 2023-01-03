@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: presta-deployment
+  namespace: presta
+spec:
+  selector:
+    matchLabels:
+      app: presta
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: presta
+    spec:
+      containers:
+      - name: presta
+        image: prestashop/prestashop:latest
+        ports:
+        - containerPort: 80
