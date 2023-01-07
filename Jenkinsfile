@@ -11,8 +11,8 @@ pipeline{
         stage("build"){
             steps{
                 script{
-                    dockerImage = docker.build("saifeddiner/presta_project")
-                    docker.withRegistry( 'ghcr.io', "docker_github" ) {
+                    dockerImage = docker.build("ghcr.io/saifeddiner/presta_project")
+                    docker.withRegistry( '', "docker_github" ) {
                         dockerImage.push("$BUILD_NUMBER")
                      }
                 }
