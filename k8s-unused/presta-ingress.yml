@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: myingress
   namespace: presta
-  annotations:
-    kubernetes.io/ingress.class: ingress-nginx
 spec:
   rules:
   - host: presta.com

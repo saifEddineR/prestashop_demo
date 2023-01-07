@@ -36,10 +36,7 @@ RUN docker-php-ext-install opcache \
 COPY ./ /var/www/html
 # Change owner and permissions
 # RUN chown -R www-data:www-data /var/www/html/var/logs
-RUN chmod -R 0777 /var/www/html/var/logs \
-/var/www/html/var/cache \
-/var/www/html/app/logs \
-/var/www/html/config \
+RUN chmod -R 0777 /var/www/html/config \
 /var/www/html/img \
 /var/www/html/mails \
 /var/www/html/modules \

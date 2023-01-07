@@ -4,29 +4,30 @@ metadata:
   name: php-service
   namespace: presta
 spec:
-  type: NodePort
   selector:
     app: presta
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
-    nodePort: 30080
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-ingress
+  name: newingress
   namespace: presta
+  labels:
+    name: newingress
 spec:
   rules:
-  - host: my-app.example.com
+  - host: presta.com
     http:
       paths:
       - pathType: Prefix
-        path: /
+        path: "/"
         backend:
           service:
             name: php-service
             port: 
               number: 80
+
