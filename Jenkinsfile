@@ -13,7 +13,7 @@ pipeline{
                 script{
                     dockerImage = docker.build("ghcr.io/saifeddiner/presta_project")
                     docker.withRegistry( '', "docker_github" ) {
-                        dockerImage.push("$BUILD_NUMBER")
+                        dockerImage.push("v1.0")
                      }
                 }
             }
