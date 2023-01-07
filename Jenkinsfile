@@ -12,9 +12,7 @@ pipeline{
             steps{
                 script{
                     dockerImage = docker.build("ghcr.io/saifeddiner/presta_project:${env.BUILD_NUMBER}")
-                    docker.withRegistry( '', "gthub_docker" ) {
                         dockerImage.push()
-                     }
                 }
             }
         }
